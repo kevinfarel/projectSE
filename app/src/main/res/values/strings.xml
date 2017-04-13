@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PrintItUp</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_register_maps">Map</string>
+</resources>
