@@ -13,7 +13,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose Location"/>
+        android:text="Choose Location"
+        android:textSize="20dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
