@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Choose Location"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:onClick="PilihLokasiPrinter"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
