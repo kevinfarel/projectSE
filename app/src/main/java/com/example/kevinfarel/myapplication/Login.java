@@ -166,10 +166,12 @@ public class Login extends AppCompatActivity{
                 final String email = Email.getText().toString();
                 SaveSharedPreferences.setUserName(Login.this,email);
                 if(flag==1) {
-                    intent = new Intent(Login.this, MainMenuUser.class);
+                    intent  = new Intent(Login.this, MainMenuUser.class);
+                    intent.putExtra("email",email);
                 }
                 else if(flag==2) {
-                    intent = new Intent(Login.this, MainMenuUser.class);
+                    intent = new Intent(Login.this, MainMenuPrinter.class);
+                    intent.putExtra("email",email);
                 }
                 Toast.makeText(Login.this,"Welcome to PrintItUp , "+Email.getText().toString() ,Toast.LENGTH_LONG).show();
                 startActivity(intent);

@@ -35,7 +35,6 @@ public class RegisterAsUser extends AppCompatActivity {
             try {
                 URL url = new URL("https://kevinfarel.000webhostapp.com/register_user.php");
                 String urlParams = "name="+name+"&email="+email+"&password="+password+"&phone="+phone;
-
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setDoOutput(true);
                 OutputStream os = httpURLConnection.getOutputStream();

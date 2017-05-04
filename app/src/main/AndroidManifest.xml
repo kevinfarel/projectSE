@@ -46,16 +46,18 @@
             android:label="@string/title_activity_register_maps" />
         <activity android:name=".MainMenuUser" />
         <activity android:name=".Splash">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".PrintNowMenu" />
         <activity
             android:name=".UserChoosePrinterMap"
-            android:label="@string/title_activity_user_choose_printer_map">
-        </activity>
+            android:label="@string/title_activity_user_choose_printer_map" />
+        <activity android:name=".MainMenuPrinter" />
+        <activity android:name=".PrinterSetup"></activity>
     </application>
 
 </manifest>

@@ -125,7 +125,7 @@ public class RegisterAsPrinter extends AppCompatActivity{
         String[] LatLong = (i.getStringExtra("latlong")).split(",");
         Latitude=LatLong[0];
         Longitude=LatLong[1];
-        Status="offline";
+        Status="Offline";
         RegisterAsPrinter.Background c = new RegisterAsPrinter.Background();
         c.execute(Email, Name, Password, Latitude,Longitude,Status);
     }

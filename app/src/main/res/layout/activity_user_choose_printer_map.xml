@@ -1,3 +1,7 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,3 +10,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kevinfarel.myapplication.UserChoosePrinterMap" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:layout_gravity="bottom"
+        android:onClick="pindahPrintUser"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:layout_marginTop="480dp"
+        android:textSize="20dp"/>
+</FrameLayout>
