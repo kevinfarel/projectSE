@@ -57,7 +57,12 @@
             android:name=".UserChoosePrinterMap"
             android:label="@string/title_activity_user_choose_printer_map" />
         <activity android:name=".MainMenuPrinter" />
-        <activity android:name=".PrinterSetup"></activity>
+        <activity android:name=".PrinterSetup" />
+        <activity
+            android:name=".OrderListMenu"
+            android:label="@string/title_activity_order_list_menu"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".PrinterOrder"></activity>
     </application>
 
 </manifest>

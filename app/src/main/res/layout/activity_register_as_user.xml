@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#42f489"
     tools:context="com.example.kevinfarel.myapplication.RegisterAsUser">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register As Printer"
+        android:text="Register As User"
         android:textAlignment="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="40dp"
         android:textSize="30dp"/>
     <EditText

@@ -31,16 +31,18 @@ import java.util.Locale;
 
 public class UserChoosePrinterMap extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
-    String jsonString,nama=null,addr=null,EmailPrinter="Not Chosen";
+    String jsonString,nama=null,addr=null,EmailPrinter="Not Chosen",EmailUser="Not Chosen";
     JSONArray arr,count;
     JSONObject jObj;
-    String x,y,name,status,emailprinter;
+    String x,y,name,status,emailprinter,NamaUser;
     public void pindahPrintUser(View v)
     {
         Intent i = new Intent(this,PrintNowMenu.class);
         i.putExtra("address",addr);
         i.putExtra("name",nama);
         i.putExtra("EmailPrinter",EmailPrinter);
+        i.putExtra("NamaUser",NamaUser);
+        i.putExtra("EmailUser",EmailUser);
         startActivity(i);
         finish();
     }
@@ -60,6 +62,9 @@ public class UserChoosePrinterMap extends FragmentActivity implements OnMapReady
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_choose_printer_map);
+        Intent i = getIntent();
+        NamaUser=i.getStringExtra("NamaUser");
+        EmailUser=i.getStringExtra("EmailUser");
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

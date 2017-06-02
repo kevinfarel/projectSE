@@ -54,8 +54,6 @@ public class Splash extends AppCompatActivity {
             super.onPreExecute();
 
             //this method will be running on UI thread
-            pdLoading.setMessage("\tLoading...");
-            pdLoading.show();
         }
         @Override
         protected Void doInBackground(Void... params) {
@@ -109,7 +107,6 @@ public class Splash extends AppCompatActivity {
             super.onPostExecute(result);
             //this method will be running on UI thread
             // Toast.makeText(SplashScreen.this, test, Toast.LENGTH_SHORT).show();
-            pdLoading.dismiss();
         }
 
 

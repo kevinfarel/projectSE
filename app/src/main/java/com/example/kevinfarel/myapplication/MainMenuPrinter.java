@@ -112,4 +112,11 @@ public class MainMenuPrinter extends AppCompatActivity {
         startActivity(a);
         finish();
     }
+    protected void PindahOrderList(View v)
+    {
+        Intent a = new Intent(this, PrinterOrder.class);
+        a.putExtra("Email",Email);
+        startActivity(a);
+        finish();
+    }
 }

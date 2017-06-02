@@ -1,10 +1,13 @@
 package com.example.kevinfarel.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
@@ -16,20 +19,32 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
-public class MainMenuUser extends AppCompatActivity {
-    String email,nama;
-    String jsonString;
-    String EmailChecker;
+public class OrderListMenu extends AppCompatActivity {
+    String EmailUser,EmailChecker;
+    ListView list;
+    String jsonString,OrderText;
     JSONArray arr,count;
     JSONObject jObj;
-    String Nama_User;
+    private ArrayAdapter<String> adapter;
+    private ArrayList<String> arrayList;
+    Context ctx=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu_user);
+        setContentView(R.layout.activity_order_list_menu2);
         Intent i = getIntent();
-        email=i.getStringExtra("email");
+        EmailUser=i.getStringExtra("EmailUser");
+        list =(ListView) findViewById(R.id.orderlist);
+        arrayList = new ArrayList<>();
+        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayList);
+        list.setAdapter(adapter);
+        onResume();
+    }
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
         new AsyncCaller().execute();
     }
     private class AsyncCaller extends AsyncTask<Void, Void, Void> {
@@ -45,7 +60,7 @@ public class MainMenuUser extends AppCompatActivity {
             //do your long running http tasks here,you don't want to pass argument and u can access the parent class' variable url over here
             URL url = null;
             try {
-                url = new URL("https://kevinfarel.000webhostapp.com/loaduser.php");
+                url = new URL("https://kevinfarel.000webhostapp.com/transactioload.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -74,7 +89,7 @@ public class MainMenuUser extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
+            adapter.clear();
             for(int a=0;a<count.length();a++) {
                 try {
                     arr = new JSONArray(jsonString);
@@ -87,33 +102,25 @@ public class MainMenuUser extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 try {
-                    Nama_User = jObj.getString("Nama_User");
+                    OrderText = jObj.getString("Order_text");
                     EmailChecker=jObj.getString("Email_User");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                if(email.equals(EmailChecker)) {
-                   nama=Nama_User;
+                if(EmailUser.equals(EmailChecker)) {
+                    // this line adds the data of your EditText and puts in your array
+                    arrayList.add(OrderText);
+                    // next thing you have to do is check if your adapter has changed
+                    adapter.notifyDataSetChanged();
                 }
             }
         }
     }
-    public void PrintNowMenu(View v)
+    protected void MainMenuUser(View v)
     {
-        Intent i = new Intent(this,PrintNowMenu.class);
-        i.putExtra("address","Not Chosen Yet");
-        i.putExtra("name","Not Chosen Yet");
-        i.putExtra("EmailPrinter","Not Chosen");
-        i.putExtra("EmailUser",email);
-        i.putExtra("NamaUser",nama);
+        Intent i = new Intent(this,MainMenuUser.class);
+        i.putExtra("EmailUser",EmailUser);
         startActivity(i);
-        finish();
-    }
-    public void OrderListMenu(View v)
-    {
-        Intent i = new Intent(this,OrderListMenu.class);
-        i.putExtra("EmailUser",email);
-        startActivity(i);
-        finish();
+        OrderListMenu.this.finish();
     }
 }

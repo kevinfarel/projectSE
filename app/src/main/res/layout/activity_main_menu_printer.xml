@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#42f489"
     tools:context="com.example.kevinfarel.myapplication.MainMenuPrinter">
 <TextView
     android:id="@+id/statview"
@@ -11,7 +12,8 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="15dp"
     android:layout_gravity="right"
-    android:layout_marginRight="150dp"/>
+    android:layout_marginRight="150dp"
+    />
 <Switch
     android:id="@+id/statswitch"
     android:layout_width="wrap_content"

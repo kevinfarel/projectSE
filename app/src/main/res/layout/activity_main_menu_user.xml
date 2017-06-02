@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#42f489"
     tools:context="com.example.kevinfarel.myapplication.MainMenuUser">
 
     <FrameLayout
@@ -17,5 +18,25 @@
             android:layout_margin="80dp"
             android:padding="20dp"
             android:onClick="PrintNowMenu"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Print Now"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="80dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/orderlist"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="200dp"
+            android:padding="20dp"
+            android:onClick="OrderListMenu"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order List"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="203dp"/>
     </FrameLayout>
 </LinearLayout>
